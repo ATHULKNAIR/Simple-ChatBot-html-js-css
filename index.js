@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = inputField.value;
             inputField.value = "";
             output(input);
-        }else if(e.code === 13){
+        }else if(e.code === '13'){
             let input = inputField.value;
             inputField.value = "";
             output(input);
