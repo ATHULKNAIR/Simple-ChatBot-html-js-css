@@ -7,11 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
             output(input);
         }
     })
+    const Button = document.getElementById("button");
+    Button.addEventListener('click',()=>{
+        let input = inputField.value;
+        inputField.value = "";
+        output(input);
+    })
 
 })
 
 
 const prompts = [
+    [""],
     ["hi", "hello", "buddy", "whats up","bro"],
     ["good morning", "morning"],
     ["good aftrenoon", "afternoon"],
@@ -36,6 +43,7 @@ var weekday = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Su
 var day = weekday[new Date().getDay()-1]
 
 const replies = [
+    ["What u mean by an Empty Message ?","Need some Help..?"],
     ["Hey..!", "Hello..!", "what's Up..!","Bro..!","Dude..!","How can I help you ?"],
     ['Morning..!', "Very good Morning..!","Good Morning !, Had your Breakfast?"],
     ["Good Afternoon to you..!", "Good Afternoon. How is your day?","Had your Lunch?"],
