@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let input = inputField.value;
             inputField.value = "";
             output(input);
-        }else if(e.code === '13'){
-            let input = inputField.value;
+        }
+    })
+    const Button = document.getElementById('button');
+    Button.addEventListener('click',()=>{
+        let input = inputField.value;
             inputField.value = "";
             output(input);
-        }
     })
 
 })
@@ -30,10 +32,7 @@ const prompts = [
     ["who is your master"],
     ["what is your name","who are you"],
     ["bye","i am going","its time to go"]
-
-
 ]
-
 // Possible responses, in corresponding order
 var time = new Date().toLocaleTimeString();
 var date = new Date().toLocaleDateString();
@@ -47,6 +46,7 @@ const replies = [
     ["Good Afternoon to you..!", "Good Afternoon. How is your day?","Had your Lunch?"],
     ["Good Evening to you..!", "Good Evening. How was your day?", "Good Evening..! How can i help you?"],
     ["Good Night..!", "Good Night. Have a Sweet Dream"],
+    ["MM.. Take care of your health"],
     ["All the best Master..!"],
     [time],
     [date],
@@ -54,7 +54,6 @@ const replies = [
     ["Athul K Nair", "I dont like to disclose my master", "He is an awesome Guy..!"],
     ["I am Buddy, your bot","Me.I am your Buddy Dude..!"],
     ["Bye-Bye","Have a nice day","Nice , talking to you"]
-
 ]
 
 // Random for any other user input
