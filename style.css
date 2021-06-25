@@ -86,7 +86,7 @@ input {
   padding: 10px;
   border: solid 1px rgb(0, 0, 14,0);
   margin-top: 1px;
-  margin-left: -40px;
+  margin-left: -45px;
   padding: 10px;
 }
 
@@ -102,8 +102,8 @@ input {
   overflow-wrap: break-word;
   height: 90%;
   width: 100%;
-  background-color: rgb(221, 246, 250, 0);
-  padding: 15px;
+  background-color: rgba(22, 59, 65, 0);
+  padding: 10px;
   margin: 15px;
   border-radius: 10px;
   border: solid blue 2px 0.5px;
@@ -187,8 +187,21 @@ input {
     width: 75vw;
     margin: 10vw;
   }
+  .user-response{
+    padding: 5px;
+  }
+  .bot-response{
+    width:fit-content;
+    padding: 5px;
+  }
+  #bot{
+    margin-top: 5px;
+  }
+  #user{
+    margin-top: 5px;
+  }
 }
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 300px) {
    input{
      padding: 10px;
    }
@@ -198,4 +211,5 @@ input {
    #button{
      font-size: 12px;
    }
+
 }
