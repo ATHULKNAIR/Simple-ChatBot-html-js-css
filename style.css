@@ -75,8 +75,10 @@ input {
   border: solid 1px rgb(0, 0, 14,0);
   margin-left: 5px;
   margin-top: 2px;
+  cursor: pointer;
 }
 .voice-btn{
+  cursor: pointer;
   position: absolute;
   background-color: rgb(0, 1, 5,0.2);
   border-radius: 20px;
@@ -207,6 +209,7 @@ input {
    }
    .voice-btn{
      font-size: 14px;
+    
    }
    #button{
      font-size: 12px;

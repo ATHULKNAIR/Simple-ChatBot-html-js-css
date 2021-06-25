@@ -150,17 +150,27 @@ function speak(text) {
 //   Sppech to text
 
 function speechRecognition() {
-    var SpeechRecognition = window.speechRecognition || webkitSpeechRecognition;
-    var speech = new SpeechRecognition();
+    var SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
 
-    speech.onstart = function () {
+    var inputField = document.getElementById('input');
+    let input = inputField.value
+    recognition.onstart = function () {
         console.log("we are listening. Try speaking near the microphone.");
+        input.innerHTML = 'Listening...'
     }
-    speech.onspeechend = function () {
-        speech.stop();
+    recognition.onrecognitionend = function () {
+        input.innerHTML = '...'
+        recognition.stop();
     }
-    speech.onresult = function (e) {
+    recognition.onresult = function (e) {
         var transcript = e.results[0][0].transcript;
         var confidence = e.results[0][0].confidence;
+        input.innerHTML = transcript;
+        output(transcript);
+        input.innerHTML = "";
     }
+    recognition.start();
 }
+
+document.getElementsByClassName('voice-btn').addEventListener('click',speechRecognition)
