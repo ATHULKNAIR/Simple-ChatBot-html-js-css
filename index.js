@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     const Button = document.getElementById('button');
-    Button.addEventListener('click',()=>{
+    Button.addEventListener('click', () => {
         let input = inputField.value;
-            inputField.value = "";
-            output(input);
+        inputField.value = "";
+        output(input);
     })
 
 })
@@ -19,31 +19,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const prompts = [
     [""],
-    ["hi", "hello", "buddy", "whats up","bro"],
+    ["hi", "hello", "buddy", "whats up", "bro"],
     ["good morning", "morning"],
     ["good aftrenoon", "afternoon"],
     ["good evening", "evening"],
     ["good night", "night"],
-    ["going to have food","going to have lunch","going to have dinner"],
+    ["going to have food", "going to have lunch", "going to have dinner"],
     ["going to attend the meeting", "going for interview"],
     ["time", "what is the time now", "current time", "time right now"],
-    ["date","today","todays date","what is todays date"],
-    ["day","today","which day is today"],
+    ["date", "today", "todays date", "what is todays date"],
+    ["day", "today", "which day is today"],
     ["who is your master"],
-    ["what is your name","who are you"],
-    ["bye","i am going","its time to go"]
+    ["what is your name", "who are you"],
+    ["bye", "i am going", "its time to go"]
 ]
 // Possible responses, in corresponding order
 var time = new Date().toLocaleTimeString();
 var date = new Date().toLocaleDateString();
-var weekday = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-var day = weekday[new Date().getDay()-1]
+var weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+var day = weekday[new Date().getDay() - 1]
 
 const replies = [
-    ["What u mean by an Empty Message ?","Need some Help..?"],
-    ["Hey..!", "Hello..!", "what's Up..!","Bro..!","Dude..!","How can I help you ?"],
-    ['Morning..!', "Very good Morning..!","Good Morning !, Had your Breakfast?"],
-    ["Good Afternoon to you..!", "Good Afternoon. How is your day?","Had your Lunch?"],
+    ["What u mean by an Empty Message ?", "Need some Help..?"],
+    ["Hey..!", "Hello..!", "what's Up..!", "Bro..!", "Dude..!", "How can I help you ?"],
+    ['Morning..!', "Very good Morning..!", "Good Morning !, Had your Breakfast?"],
+    ["Good Afternoon to you..!", "Good Afternoon. How is your day?", "Had your Lunch?"],
     ["Good Evening to you..!", "Good Evening. How was your day?", "Good Evening..! How can i help you?"],
     ["Good Night..!", "Good Night. Have a Sweet Dream"],
     ["MM.. Take care of your health"],
@@ -52,8 +52,8 @@ const replies = [
     [date],
     [day],
     ["Athul K Nair", "I dont like to disclose my master", "He is an awesome Guy..!"],
-    ["I am Buddy, your bot","Me.I am your Buddy Dude..!"],
-    ["Bye-Bye","Have a nice day","Nice , talking to you"]
+    ["I am Buddy, your bot", "Me.I am your Buddy Dude..!"],
+    ["Bye-Bye", "Have a nice day", "Nice , talking to you"]
 ]
 
 // Random for any other user input
@@ -145,4 +145,22 @@ function speak(text) {
     u.rate = 1;
     u.pitch = 1;
     speechSynthesis.speak(u);
+}
+
+//   Sppech to text
+
+function speechRecognition() {
+    var SpeechRecognition = window.speechRecognition || webkitSpeechRecognition;
+    var speech = new SpeechRecognition();
+
+    speech.onstart = function () {
+        console.log("we are listening. Try speaking near the microphone.");
+    }
+    speech.onspeechend = function () {
+        speech.stop();
+    }
+    speech.onresult = function (e) {
+        var transcript = e.results[0][0].transcript;
+        var confidence = e.results[0][0].confidence;
+    }
 }
